@@ -17,7 +17,7 @@ export class TrackComponent implements OnInit {
   constructor(private stockService: StockService) {
 
     /**get data with localStorage */
-    let data = localStorage.getItem('stockList');
+    const data = localStorage.getItem('stockList');
     if (data) {
       this.stockList = JSON.parse(data);
     }

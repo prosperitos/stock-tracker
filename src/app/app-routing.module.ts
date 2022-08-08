@@ -5,7 +5,8 @@ import { TrackComponent } from './pages/stock/track/track.component';
 
 const routes: Routes = [
   {path:'', component: TrackComponent},
-  {path:'sentiment/:symbol', component: SummaryComponent}
+  {path:'sentiment/:symbol', component: SummaryComponent},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
