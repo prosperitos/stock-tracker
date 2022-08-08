@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-sm-3" *ngIf="sentimentList[0]; else nodata">
           <p class="card-text">{{lastThreeMonth[0]}}</p>
-          <p class="card-text">Change: {{sentimentList[0].change}}</p>
+          <p class="card-text">Change: {{sentimentList[0].change | sign}}</p>
           <p class="card-text">MSPR: {{sentimentList[0].mspr}}</p>
         </div>
 

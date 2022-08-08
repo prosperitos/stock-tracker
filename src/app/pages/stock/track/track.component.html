@@ -35,7 +35,7 @@
           <div class="row">
             <div class="col-sm-8">
               <h5 class="card-title">{{stock?.companyName}} ({{stock?.symbol}})</h5>
-              <p class="card-text">Change today: {{stock?.change | percent }} Opening price:
+              <p class="card-text">Change today: {{stock.change | sign}}% Opening price:
                 {{stock?.openingPrice | currency}}</p>
               <p class="card-text">Current price: {{stock?.currentPrice | currency}} Hight price:
                 {{stock?.highPrice | currency}}</p>

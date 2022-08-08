@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryComponent } from './pages/stock/summary/summary.component';
 import { TrackComponent } from './pages/stock/track/track.component';
+import {AddSignPipe} from './pipe/sign.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SummaryComponent,
-    TrackComponent
+    TrackComponent,
+    AddSignPipe
   ],
   imports: [
     BrowserModule,

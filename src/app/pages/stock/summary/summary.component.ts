@@ -18,6 +18,7 @@ export class SummaryComponent implements OnInit {
   lastThreeMonth: string[] = [];
   constructor(private route: ActivatedRoute,
     private stockService: StockService) {
+    /**get param symbol value on uri */
     this.symbol = this.route.snapshot.paramMap.get('symbol');
   }
 
@@ -29,8 +30,10 @@ export class SummaryComponent implements OnInit {
       this.stockService.getSymbolCompany(this.symbol).subscribe(company => {
         this.stockService.getSentimentOfSymbol(this.symbol, from, to).subscribe((value) => {
           if (value) {
+            /**get company name */
             this.companyName = company.result[0].description;
             value.data.forEach((element: any) => {
+              /**set response value on the list */
               this.sentimentList.push(new Sentiment(Month[element.month],
                 element.year, element.change, element.mspr));
             });
