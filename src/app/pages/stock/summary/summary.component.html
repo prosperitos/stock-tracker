@@ -1,0 +1,79 @@
+<div class="container-fluid marge">
+  <div class="text-center" *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+
+  <div class="row marge cadre">
+    <h4>{{companyName}} ({{symbol}})</h4>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="sentimentList[0]; else nodata">
+          <p class="card-text">{{lastThreeMonth[0]}}</p>
+          <p class="card-text">Change: {{sentimentList[0].change}}</p>
+          <p class="card-text">MSPR: {{sentimentList[0].mspr}}</p>
+        </div>
+
+        <ng-template #nodata>
+          <div class="col-sm-4">
+            <p class="card-text">{{lastThreeMonth[0]}}</p>
+            <p> No Data to display</p>
+          </div>
+        </ng-template>
+
+        <div class="col-sm-1" *ngIf="sentimentList[0]">
+          <span class="up" *ngIf="sentimentList[0].change > 0;">&#8593;</span>
+          <span class="down" *ngIf="sentimentList[0].change < 0;">&#8595;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="sentimentList[1]; else nodata1">
+          <p class="card-text">{{lastThreeMonth[1]}}</p>
+          <p class="card-text">Change: {{sentimentList[1].change}}</p>
+          <p class="card-text">MSPR: {{sentimentList[1].mspr}}</p>
+        </div>
+
+
+        <ng-template #nodata1>
+          <div class="col-sm-4">
+            <p class="card-text">{{lastThreeMonth[1]}}</p>
+            <p>No Data to display</p>
+          </div>
+        </ng-template>
+
+
+        <div class="col-sm-1" *ngIf="sentimentList[1]">
+          <span class="up" *ngIf="sentimentList[1].change > 0;">&#8593;</span>
+          <span class="down" *ngIf="sentimentList[1].change < 0;">&#8595;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-3" *ngIf="sentimentList[2]; else nodata2">
+          <p class="card-text">{{lastThreeMonth[2]}}</p>
+          <p class="card-text">Change: {{sentimentList[2].change}}</p>
+          <p class="card-text">MSPR: {{sentimentList[2].mspr}}</p>
+        </div>
+
+        <ng-template #nodata2>
+          <div class="col-sm-4">
+            <p class="card-text">{{lastThreeMonth[2]}}</p>
+            <p> No Data to display</p>
+          </div>
+        </ng-template>
+
+        <div class="col-sm-1" *ngIf="sentimentList[2]">
+          <span class="up" *ngIf="sentimentList[2].change > 0;">&#8593;</span>
+          <span class="down" *ngIf="sentimentList[2].change < 0;">&#8595;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="['/']" class="btn btn-secondary">&#60; Back to list of stocks</a>
+</div>

@@ -1,0 +1,15 @@
+.cadre {
+  height: 200px;
+  border: 2px solid #999999;
+  margin-top: 20px;
+}
+
+.up {
+  color: green;
+  font-size: 100px;
+}
+
+.down {
+  color: red;
+  font-size: 100px;
+}
