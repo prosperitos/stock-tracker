@@ -13,7 +13,7 @@ import { Month } from 'src/app/enum/month.enum';
 export class SummaryComponent implements OnInit {
   sentimentList: Sentiment[] = [];
   symbol: string | null;
-  companyName = null;
+  companyName = '';
   loading = true;
   lastThreeMonth: string[] = [];
   constructor(private route: ActivatedRoute,
